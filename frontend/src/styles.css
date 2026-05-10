@@ -1,0 +1,66 @@
+.app {
+  min-height: 100vh;
+  /* background: linear-gradient(135deg, rgb(270, 218, 240), #353344, #7979a1); */
+  background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+}
+
+button {
+  cursor: pointer;
+}
+.content {
+  padding: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: linear-gradient(to right, #bd1b8f, #2d5394);
+}
+
+.nav-links button {
+  margin: 0 10px;
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+.nav-links .active {
+  border-bottom: 2px solid #00e5ff;
+}
+
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background: #00e5ff;
+  border: none;
+  border-radius: 6px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.box {
+  background: rgba(0,0,0,0.4);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
