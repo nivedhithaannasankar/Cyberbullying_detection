@@ -3,218 +3,71 @@
 
 ## 📌 Overview
 
-The **Cyberbullying Detection System** is a Machine Learning and Natural Language Processing (NLP) based web application that detects and classifies cyberbullying content from user-provided text.
-
-It helps identify harmful, offensive, and abusive language in online communication, contributing to a safer digital environment.
-
-The system consists of:
-
-* 🖥️ Frontend: React.js
-* ⚙️ Backend: Flask (Python REST API)
-* 🤖 Machine Learning Model: NLP-based classifier (TF-IDF + Logistic Regression)
-* 📊 Dataset: Cyberbullying labeled text dataset
+A Machine Learning + NLP web app that detects and classifies cyberbullying content from text inputs in real time.
 
 ---
 
-## ❗ Problem Statement
+## ⚙️ Tech Stack
 
-Cyberbullying is a major issue across social media platforms and online communities.
-
-Manual moderation is:
-
-* time-consuming
-* error-prone
-* not scalable
-
-This project automates detection of cyberbullying content using Machine Learning and provides real-time predictions through a web interface.
+* **Frontend:** React.js
+* **Backend:** Flask (Python REST API)
+* **ML Model:** TF-IDF + Logistic Regression
+* **Libraries:** Scikit-learn, Pandas, NumPy
 
 ---
 
 ## ✨ Features
 
-* ⚡ Real-time cyberbullying detection
-* 🧠 NLP-based text preprocessing
-* 📊 Multi-class classification (age, gender, religion, ethnicity, etc.)
-* 🌐 REST API integration (Flask backend)
-* 🎨 User-friendly React frontend
-* 📱 Responsive UI
-* 🚀 Fast prediction response
+* Real-time cyberbullying detection
+* Multi-class classification (age, gender, religion, ethnicity, etc.)
+* NLP-based text preprocessing
+* REST API integration
+* Simple and responsive UI
 
 ---
 
-## 🛠️ Technology Stack
+## 🏗️ Architecture
 
-### 🎨 Frontend
-
-* React.js
-* JavaScript
-* HTML5
-* CSS3
-* Axios
-* React Router DOM
-
-### ⚙️ Backend
-
-* Python
-* Flask
-* Flask-CORS
-
-### 🤖 Machine Learning
-
-* Scikit-learn
-* Pandas
-* NumPy
-
-### 🧰 Tools
-
-* VS Code
-* Git
-* GitHub
-
----
-
-## 🏗️ Project Architecture
-
-```text
-User Input
-   ↓
-React Frontend
-   ↓
-Flask REST API
-   ↓
-Text Preprocessing (NLP)
-   ↓
-TF-IDF Vectorization
-   ↓
-Trained ML Model
-   ↓
-Prediction Output
-```
+User → React Frontend → Flask API → NLP Processing → ML Model → Prediction
 
 ---
 
 ## 📊 Dataset
 
-The dataset contains labeled social media comments for cyberbullying detection.
-
-### Labels include:
-
-* age
-* gender
-* religion
-* ethnicity
-* other_cyberbullying
-* not_cyberbullying
-
-### Dataset Details:
-
 * Source: Kaggle
-* Records: ~20,000+
-* Format: CSV
+* ~20,000+ labeled comments
+* Classes: age, gender, religion, ethnicity, other, not_cyberbullying
 
 ---
 
-## 🧠 Machine Learning Workflow
+## 🧠 Workflow
 
-1. Data Collection
-2. Data Cleaning
-3. Text Preprocessing
-4. Label Normalization
-5. Feature Extraction (TF-IDF)
-6. Train-Test Split
-7. Model Training (Logistic Regression)
-8. Model Evaluation
-9. Model Deployment via Flask API
+Data → Cleaning → Preprocessing → TF-IDF → Training → Evaluation → Deployment
 
 ---
 
-## 💻 Frontend Setup
+## 💻 Run Project
 
-### Navigate to frontend
+### Frontend
 
 ```bash
 cd frontend
-```
-
-### Install dependencies
-
-```bash
 npm install
-```
-
-### Start frontend
-
-```bash
 npm start
 ```
 
-Frontend runs at:
-
-```text
-http://localhost:3000
-```
-
----
-
-## ⚙️ Backend Setup
-
-### Navigate to backend
+### Backend
 
 ```bash
 cd backend
-```
-
-### Create virtual environment
-
-```bash
-python -m venv venv
-```
-
-### Activate environment
-
-Windows:
-
-```bash
-venv\Scripts\activate
-```
-
-Linux/Mac:
-
-```bash
-source venv/bin/activate
-```
-
-### Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### Run Flask server
-
-```bash
 python app.py
-```
-
-Backend runs at:
-
-```text
-http://localhost:5000
 ```
 
 ---
 
-## 🔌 API Endpoint
+## 🔌 API
 
-### Predict Cyberbullying
-
-**POST**
-
-```text
-/predict
-```
-
-### Request
+**POST /predict**
 
 ```json
 {
@@ -222,11 +75,10 @@ http://localhost:5000
 }
 ```
 
-### Response
+**Response**
 
 ```json
 {
-  "input": "You are useless and stupid",
   "prediction": "General Cyberbullying",
   "confidence": 87.5
 }
@@ -234,21 +86,19 @@ http://localhost:5000
 
 ---
 
-## 🚀 Future Enhancements
+## 🚀 Future Scope
 
-* 🌍 Multi-language support
-* 🧠 Deep Learning (BERT / LSTM)
-* 🔐 User authentication system
-* 📊 Analytics dashboard
-* 💬 Social media integration
-* 📱 Mobile application
+* Deep Learning (BERT/LSTM)
+* Multi-language support
+* Dashboard & analytics
+* Mobile app
 
 ---
 
+## ⭐ Goal
 
-## ⭐ Project Goal
-
-To build an intelligent system that helps detect and reduce cyberbullying in online communication using AI.
+Detect and reduce cyberbullying using AI-powered text classification.
 
 ---
 
+Just tell 👍
