@@ -101,4 +101,3 @@ Detect and reduce cyberbullying using AI-powered text classification.
 
 ---
 
-Just tell 👍
