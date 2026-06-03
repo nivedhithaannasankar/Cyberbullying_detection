@@ -4,8 +4,7 @@ import axios from "axios";
 export default function Dashboard() {
   const [stats, setStats] = useState({
     total: 0,
-    bullying: 0,
-    safe: 0,
+    categories: {}
   });
 
   const fetchStats = async () => {
@@ -18,14 +17,23 @@ export default function Dashboard() {
   };
 
   useEffect(() => {
-    fetchStats(); // first load
+    fetchStats();
 
     const interval = setInterval(() => {
-      fetchStats(); // auto refresh
-    }, 2000); // 2 seconds
+      fetchStats();
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
+
+  const categories = stats.categories || {};
+
+  const safeCount = categories["Not Cyberbullying"] || 0;
+
+  const bullyingCount =
+    Object.entries(categories)
+      .filter(([key]) => key !== "Not Cyberbullying")
+      .reduce((sum, [, value]) => sum + value, 0);
 
   return (
     <div className="card">
@@ -38,13 +46,44 @@ export default function Dashboard() {
         </div>
 
         <div className="box">
-          <h3>Bullying Detected</h3>
-          <p>{stats.bullying}</p>
+          <h3>Total Cyberbullying</h3>
+          <p>{bullyingCount}</p>
         </div>
 
         <div className="box">
           <h3>Safe Messages</h3>
-          <p>{stats.safe}</p>
+          <p>{safeCount}</p>
+        </div>
+      </div>
+
+      <h3 style={{ marginTop: "25px" }}>
+        Cyberbullying Categories
+      </h3>
+
+      <div className="grid">
+        <div className="box">
+          <h4>Gender</h4>
+          <p>{categories["Gender Cyberbullying"] || 0}</p>
+        </div>
+
+        <div className="box">
+          <h4>Religion</h4>
+          <p>{categories["Religious Cyberbullying"] || 0}</p>
+        </div>
+
+        <div className="box">
+          <h4>Age</h4>
+          <p>{categories["Age-based Cyberbullying"] || 0}</p>
+        </div>
+
+        <div className="box">
+          <h4>Ethnicity</h4>
+          <p>{categories["Ethnicity Cyberbullying"] || 0}</p>
+        </div>
+
+        <div className="box">
+          <h4>General</h4>
+          <p>{categories["General Cyberbullying"] || 0}</p>
         </div>
       </div>
     </div>

@@ -1,1 +1,266 @@
-[{"text": "good morning", "prediction": "Not Cyberbullying"}, {"text": "you die", "prediction": "Cyberbullying"}]
+[
+    {
+        "text": "good morning",
+        "prediction": "Not Cyberbullying"
+    },
+    {
+        "text": "you die",
+        "prediction": "Cyberbullying"
+    },
+    {
+        "text": "hello\n",
+        "prediction": "Not Cyberbullying"
+    },
+    {
+        "text": "your are an idiot\n\n",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "you are an idiot\n\n",
+        "prediction": "Religious Cyberbullying"
+    },
+    {
+        "text": "shit\n\n",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "great work",
+        "prediction": "Not Cyberbullying"
+    },
+    {
+        "text": "information",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "good morning \n",
+        "prediction": "Not Cyberbullying"
+    },
+    {
+        "text": "you re a looser",
+        "prediction": "Not Cyberbullying"
+    },
+    {
+        "text": "you win\n",
+        "prediction": "Not Cyberbullying"
+    },
+    {
+        "text": "you loose\n",
+        "prediction": "Religious Cyberbullying"
+    },
+    {
+        "text": "have a great day",
+        "prediction": "Not Cyberbullying"
+    },
+    {
+        "text": "what is your age",
+        "prediction": "Not Cyberbullying"
+    },
+    {
+        "text": "see your age\n",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "Women are bad drivers",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "Women are dangerous",
+        "prediction": "Not Cyberbullying"
+    },
+    {
+        "text": "Women are killers",
+        "prediction": "Gender Cyberbullying"
+    },
+    {
+        "text": "Your religion is stupid",
+        "prediction": "Religious Cyberbullying"
+    },
+    {
+        "text": "Have a nice day",
+        "prediction": "Not Cyberbullying"
+    },
+    {
+        "text": "You are useless",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "Old people should stay out of this.",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "You're way too young for this discussion.",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "You're just a teenager, what do you know?\nPeople your age are out of touch.\nYou're too old to be here.\nChildren shouldn't have opinions.\nYou're too young to make decisions.",
+        "prediction": "Not Cyberbullying"
+    },
+    {
+        "text": "You're just a teenager, what do you know?\n.",
+        "prediction": "Not Cyberbullying"
+    },
+    {
+        "text": "Kids like you should stay quiet.",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "Kids like you should stay quiet. and you are stupid",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "Kids like you should stay quiet and you are stupid",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "Kids like you should stay quiet and are stupid",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "Kids like you should stay quiet and stupid",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "idiot",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "you are an idiot",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "People from your ethnic group are useless",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "People from your ethnic group are useless",
+        "prediction": "Ethnicity Cyberbullying"
+    },
+    {
+        "text": "You are an idiot",
+        "prediction": "Religious Cyberbullying"
+    },
+    {
+        "text": "You are idiot\n",
+        "prediction": "Religious Cyberbullying"
+    },
+    {
+        "text": "idiot\n",
+        "prediction": "Religious Cyberbullying"
+    },
+    {
+        "text": "idiot\n",
+        "prediction": "Religious Cyberbullying"
+    },
+    {
+        "text": "stupid\n",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "worthless",
+        "prediction": "Not Cyberbullying"
+    },
+    {
+        "text": "you are worthless",
+        "prediction": "Not Cyberbullying"
+    },
+    {
+        "text": "you are great",
+        "prediction": "Not Cyberbullying"
+    },
+    {
+        "text": "you idiot",
+        "prediction": "Religious Cyberbullying"
+    },
+    {
+        "text": "your religion is stupid",
+        "prediction": "Religious Cyberbullying"
+    },
+    {
+        "text": "You are too old to understand this",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "This is not for old people like you",
+        "prediction": "Age-based Cyberbullying"
+    },
+    {
+        "text": "Old man like you cannot learn coding",
+        "prediction": "Not Cyberbullying"
+    },
+    {
+        "text": "At your age you should stay home",
+        "prediction": "Not Cyberbullying"
+    },
+    {
+        "text": "Why are you still working at this age",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "Old generation people are useless",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "You are too aged to work here",
+        "prediction": "Not Cyberbullying"
+    },
+    {
+        "text": "You are too old for social media",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "hello\n",
+        "prediction": "Not Cyberbullying"
+    },
+    {
+        "text": "you are idiot",
+        "prediction": "Religious Cyberbullying"
+    },
+    {
+        "text": "you are an idiot",
+        "prediction": "Religious Cyberbullying"
+    },
+    {
+        "text": "you are an idiot",
+        "prediction": "Religious Cyberbullying"
+    },
+    {
+        "text": "you are an idiot",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "your religion is stupid",
+        "prediction": "General Cyberbullying"
+    },
+    {
+        "text": "hindu is pig",
+        "prediction": "Religious Cyberbullying"
+    },
+    {
+        "text": "the girl is waste",
+        "prediction": "Age-based Cyberbullying"
+    },
+    {
+        "text": "the girl is beautiful",
+        "prediction": "Age-based Cyberbullying"
+    },
+    {
+        "text": "the girl is working great job",
+        "prediction": "Age-based Cyberbullying"
+    },
+    {
+        "text": "the girl is doing great things",
+        "prediction": "Age-based Cyberbullying"
+    },
+    {
+        "text": "the boys are good",
+        "prediction": "Gender Cyberbullying"
+    },
+    {
+        "text": "gender descrimination",
+        "prediction": "Not Cyberbullying"
+    },
+    {
+        "text": "gender inequality is good",
+        "prediction": "Gender Cyberbullying"
+    }
+]

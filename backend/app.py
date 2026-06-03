@@ -4,6 +4,7 @@ import joblib
 import os
 import re
 import json
+from collections import Counter
 
 app = Flask(__name__)
 CORS(app)
@@ -15,13 +16,27 @@ MODEL_PATH = "model/model.pkl"
 VECTORIZER_PATH = "model/vectorizer.pkl"
 
 if not os.path.exists(MODEL_PATH) or not os.path.exists(VECTORIZER_PATH):
-    raise FileNotFoundError("Model files not found. Train your model first.")
+    raise FileNotFoundError(
+        "Model files not found. Train your model first."
+    )
 
 model = joblib.load(MODEL_PATH)
 vectorizer = joblib.load(VECTORIZER_PATH)
 
 # -------------------------
-# MEMORY STORAGE (PERSISTENT)
+# LABEL MAPPING
+# -------------------------
+LABELS = {
+    "gender": "Gender Cyberbullying",
+    "religion": "Religious Cyberbullying",
+    "age": "Age-based Cyberbullying",
+    "ethnicity": "Ethnicity Cyberbullying",
+    "other_cyberbullying": "General Cyberbullying",
+    "not_cyberbullying": "Not Cyberbullying"
+}
+
+# -------------------------
+# MEMORY STORAGE
 # -------------------------
 DATA_FILE = "history.json"
 
@@ -49,38 +64,59 @@ def home():
     return "Cyberbullying Detection API is Running"
 
 # -------------------------
-# PREDICT ROUTE
+# STATS ROUTE
 # -------------------------
-
 @app.route("/stats", methods=["GET"])
 def stats():
     total = len(history)
-    bullying = sum(1 for item in history if item["prediction"] == "Cyberbullying")
-    safe = sum(1 for item in history if item["prediction"] == "Not Cyberbullying")
+
+    category_counts = Counter(
+        item["prediction"]
+        for item in history
+    )
 
     return jsonify({
         "total": total,
-        "bullying": bullying,
-        "safe": safe
+        "categories": dict(category_counts)
     })
-    
+
+# -------------------------
+# PREDICT ROUTE
+# -------------------------
 @app.route("/predict", methods=["POST"])
 def predict():
+
     data = request.get_json()
 
     if not data or "text" not in data:
-        return jsonify({"error": "No text provided"}), 400
+        return jsonify({
+            "error": "No text provided"
+        }), 400
 
     text = data["text"]
+
     cleaned = clean_text(text)
 
     vector = vectorizer.transform([cleaned])
+
     prediction = model.predict(vector)[0]
 
-    result = "Cyberbullying" if prediction == 1 else "Not Cyberbullying"
+    # Confidence score
+    try:
+        confidence = round(
+            float(max(model.predict_proba(vector)[0])) * 100,
+            2
+        )
+    except:
+        confidence = None
+
+    result = LABELS.get(
+        prediction,
+        str(prediction)
+    )
 
     # -------------------------
-    # STORE RESULT
+    # SAVE HISTORY
     # -------------------------
     history.append({
         "text": text,
@@ -88,25 +124,47 @@ def predict():
     })
 
     with open(DATA_FILE, "w") as f:
-        json.dump(history, f)
+        json.dump(history, f, indent=4)
 
     # -------------------------
     # RESPONSE
     # -------------------------
     return jsonify({
         "input": text,
-        "prediction": result
+        "prediction": result,
+        "confidence": confidence
     })
 
 # -------------------------
-# HISTORY API
+# HISTORY ROUTE
 # -------------------------
 @app.route("/history", methods=["GET"])
 def get_history():
     return jsonify(history)
 
 # -------------------------
-# RUN SERVER
+# CLEAR HISTORY
+# -------------------------
+@app.route("/clear-history", methods=["DELETE"])
+def clear_history():
+
+    global history
+
+    history = []
+
+    with open(DATA_FILE, "w") as f:
+        json.dump([], f)
+
+    return jsonify({
+        "message": "History cleared successfully"
+    })
+
+# -------------------------
+# RUN APP
 # -------------------------
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(
+        debug=True,
+        host="0.0.0.0",
+        port=5000
+    )
